@@ -1,0 +1,47 @@
+/* Different Styles with Left Alignment, Black Background, and White Text Color */
+body {
+    background-color: #000;
+    color: #fff;
+    text-align: left;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #000;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    color: #fff;
+}
+
+p {
+    font-size: 16px;
+    color: #fff;
+}
+
+ol {
+    list-style-type: disc;
+    margin: 20px 0;
+}
+
+li {
+    font-size: 16px; /* Adjusted font size for list items */
+    color: #fff;
+    margin: 5px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #fff; /* Changed link color to white */
+    font-weight: normal;
+}
+
+a:hover {
+    text-decoration: none; /* Removed underline on hover */
+    color: #ccc; /* Changed link color on hover to a lighter shade of gray */
+}

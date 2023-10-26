@@ -1,0 +1,42 @@
+@charset "ISO-8859-1";/* Different Styles with Left Alignment, Black Background, and White Text Color */
+body {
+    background-color: #000;
+    color: #fff;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 24px;
+    color: #fff;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 20px;
+    color: #fff; /* Change h2 text color to white */
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+li {
+    font-size: 16px;
+    color: #fff; /* Change list item text color to white */
+    margin-bottom: 10px;
+}
+
+li:last-child {
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid #fff; /* White border for the last list item */
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff; /* Change text color of the last list item to white */
+    background-color: #000; /* Change background color of the last list item to black */
+}

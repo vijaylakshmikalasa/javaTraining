@@ -1,0 +1,57 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+/* Header Styles */
+.navbar {
+    background-color: yellow;
+    border-radius: 0;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+}
+
+/* Table Styles */
+.table {
+    background-color: yellow;
+    border: 2px solid #f0f0f0;
+}
+
+.table th {
+    background-color: #ffdb58; /* Yellow background color */
+    color: black; /* Text color for table header */
+}
+
+.table td {
+    background-color: #fff2cc; /* Light yellow background color */
+}
+
+/* Button Styles */
+.btn-success {
+    background-color: yellow;
+    color: black;
+    border: 2px solid #ffdb58;
+}
+
+.btn-success:hover {
+    background-color: #ffdb58; /* Darker yellow on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+}

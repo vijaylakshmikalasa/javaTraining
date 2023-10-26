@@ -1,0 +1,52 @@
+/* Different Styles with Left Alignment, Black Background, and White Text Color */
+body {
+    background-color: #000;
+    color: #fff;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 24px;
+    color: #fff;
+    margin-top: 20px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    font-size: 16px;
+    color: #fff; /* Change label text color to white */
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="file"] {
+    width: 40%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #333; /* Darker border color */
+    border-radius: 5px;
+    background-color: #222; /* Dark gray background color */
+    color: #fff; /* Text color for input */
+}
+
+input[type="submit"] {
+    background-color: #000; /* Change button background color to black */
+    color: #fff;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #333; /* Darker background color on hover */
+}

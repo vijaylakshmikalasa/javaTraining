@@ -1,0 +1,76 @@
+/* Different Styles with Left Alignment, Black Background, and White Text Color */
+body {
+    background-color: #000;
+    color: #fff;
+    text-align: left;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #000;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #fff;
+}
+
+form {
+    margin-top: 20px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
+}
+
+textarea {
+    width: 50%;
+    height: 150px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    width: 100px;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #333;
+}
+
+/* Additional styling */
+.container {
+    box-sizing: border-box;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+textarea,
+input[type="submit"] {
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    width: 100%;
+}
