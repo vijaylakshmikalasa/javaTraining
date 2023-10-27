@@ -2,40 +2,35 @@
 <!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 <web-app id="WebApp_ID">
 	<display-name>firstWeb</display-name>
-	
-	<filter>
-	<filter-name>CounterFilter</filter-name>
-	<filter-class>firstWeb.CounterFilter</filter-class>
-	</filter>
-	
-	<filter-mapping>
-	<filter-name>CounterFilter</filter-name>
-	<url-pattern>/*</url-pattern>
-	</filter-mapping>
 	<listener>
-	<listener-class>firstWeb.CounterLoaderListener</listener-class>
+		<listener-class>firstWeb.CounterLoaderListener</listener-class>
 	</listener>
 	
+	<servlet>
+	<servlet-name>FacebookLoginServlet</servlet-name>
+	<servlet-class>fblogin.FacebookLoginServlet</servlet-class>
+	</servlet>
+
 	
 
 	<servlet>
-		<servlet-name>HelloServlet</servlet-name>
+		<servlet-name>helloServlet</servlet-name>
 		<servlet-class>firstWeb.HelloServlet</servlet-class>
 		<init-param>
-		<param-name>driver-Class</param-name>
-		<param-value>com.jdbc.mysql.Driver</param-value>
+			<param-name>driver-class</param-name>
+			<param-value>com.jdbc.mysql.Driver</param-value>
 		</init-param>
 		<init-param>
-		<param-name>jdbc-url</param-name>
-		<param-value>jdbc:mysql://localhost:3306/valtech2023</param-value>
+			<param-name>jdbc-url</param-name>
+			<param-value>jdbc:mysql://localhost:3306/valtech2023</param-value>
 		</init-param>
 		<init-param>
-		<param-name>username</param-name>
-		<param-value>root</param-value>
+			<param-name>username</param-name>
+			<param-value>root</param-value>
 		</init-param>
 		<init-param>
-		<param-name>password</param-name>
-		<param-value>root</param-value>
+			<param-name>password</param-name>
+			<param-value>root</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
@@ -50,24 +45,46 @@
 		<servlet-name>EmployeeServlet</servlet-name>
 		<servlet-class>firstWeb.EmployeeServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>HtmlAssessmnet</servlet-name>
+		<display-name>HtmlAssessmnet</display-name>
+		<description></description>
+		<servlet-class>firstWeb.HtmlAssessmnet</servlet-class>
+	</servlet>
+	
+	
+	
+	
 	<servlet-mapping>
-	<servlet-name>EmployeeServlet</servlet-name>
-	<url-pattern>/empCtrl</url-pattern>
+	<servlet-name>FacebookLoginServlet</servlet-name>
+	<url-pattern>/facebooklogin</url-pattern>
 	</servlet-mapping>
+	
 	<servlet-mapping>
-		<servlet-name>HelloServlet</servlet-name>
+		<servlet-name>EmployeeServlet</servlet-name>
+		<url-pattern>/empCtlr</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet-mapping>
+		<servlet-name>helloServlet</servlet-name>
 		<url-pattern>/hello</url-pattern>
 	</servlet-mapping>
-
+	
 	<servlet-mapping>
-		<servlet-name>HelloServlet</servlet-name>
-		<url-pattern>/Hii</url-pattern>
+		<servlet-name>helloServlet</servlet-name>
+		<url-pattern>/hi</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>LoginServlet</servlet-name>
 		<url-pattern>/login</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>HtmlAssessmnet</servlet-name>
+		<url-pattern>/HtmlAssessmnet</url-pattern>
+	</servlet-mapping>
 
+	
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>

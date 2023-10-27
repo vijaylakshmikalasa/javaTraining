@@ -7,16 +7,6 @@
 <title>Login Results</title>
 </head>
 <body>
-<script>
-
-<% String message = (String)request.getAttribute("message"); %>
- 
-    <% if (message != null) { %>
- 
-        alert('<%= message %>');
- 
-    <% } %>
-    </script>
 Message = <%= request.getAttribute("message") %>
 </body>
 </html>
