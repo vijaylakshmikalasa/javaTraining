@@ -12,48 +12,40 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
-
-public class CounterFilter implements Filter {
+public class CounterFilter implements Filter{
 
 	@Override
 	public void destroy() {
-		System.out.println("Destroy of Counter Filter...");
-		
+		System.out.println("Destroy of Counter Filter");
 	}
 
 	@Override
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-			throws IOException, ServletException {
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		System.out.println("Do Filter of Counter Filter");
-		Map<String, Integer> counters = (Map<String,Integer>) request.getServletContext().getAttribute("counters");
-		HttpServletRequest req = (HttpServletRequest)request;
-		String uri = req.getRequestURI();
-		counters.put(uri, counters.containsKey(uri) ? counters.get(uri) + 1 : 1);
-		if(counters.containsKey(uri))  {
-			//increment
+		Map<String,Integer> counters=(Map<String,Integer>) ((FilterConfig) request).getServletContext().getAttribute("counters");
+		HttpServletRequest req=(HttpServletRequest) request;
+		String uri=req.getRequestURI();
+		if(counters.containsKey(uri)) {
 			counters.put(uri, counters.get(uri)+1);
-		}else  {
-			//init to 1
-			counters.put(uri,1);
+		}
+		else {
+			counters.put(uri, 1);
 		}
 		printCounters(counters);
 		chain.doFilter(request, response);
 	}
 
 	private void printCounters(Map<String, Integer> counters) {
-		for (String s:counters.keySet())  {
-			System.out.println("URI = "+s+" Counter = "+counters.get(s));
+		for(String s:counters.keySet()) {
+			System.out.println("Uri = "+s+" Counter = "+counters.get(s));
 		}
-		
 	}
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-		System.out.println("Init of Counter Filter...");
-		Map<String, Integer> counter = new HashMap<>();
-		filterConfig.getServletContext().setAttribute("counters", counter);
-
-		
+		System.out.println("Init of Counter Filter");
+		Map<String,Integer> counters=new HashMap<>();
+		filterConfig.getServletContext().setAttribute("counters", counters);
 	}
 
 }

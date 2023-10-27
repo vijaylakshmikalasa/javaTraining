@@ -6,57 +6,39 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class LoginServlet
- */
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public LoginServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().print("User name="+request.getParameter("name") + "pass word="+ request.getParameter("pass"));
+		
+		response.getWriter().print("User Name = "+request.getParameter("name")+" Password = "+request.getParameter("password"));
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 * TODO if name and pass is wrong show login page again with msg...
-	 * if name is less than 4 chars then add msg login page
-	 * if pass is less then 8 chars then add msg and login page
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String name = request.getParameter("name");
-		String pass = request.getParameter("pass");
-//		if("root".equals(name) && "root".equals(pass)) {
-//			request.setAttribute("message", "Hi root how have you been");
-//		}else {
-//			request.setAttribute("message","only root is a valid user");
-//		}
-//		request.getRequestDispatcher("loginresults.jsp").forward(request, response);
-//
-//	}
-	if(isValidUser(name,pass)) {
-		String message="Logged in Successfully";
-		request.setAttribute("message","message" );
+		String name=request.getParameter("name");
+		String password=request.getParameter("password");
 		
-			
-	}else {
-		String message="invalid Username or password";
-		request.setAttribute("message",message );
-		request.getRequestDispatcher("loginresults.jsp").forward(request, response);
+		if (name.length()<4) {
+            request.setAttribute("nameerr", "Name should be at least 4 characters long");
+            request.getRequestDispatcher("hello.jsp").forward(request, response);
+        }
+		if(password.length()<8) {
+			request.setAttribute("passworderr", "The password should be at least 8 characters long.");
+		}
+//		if(!"kruthik".equals(name) && !"kruthikb6".equals(password)) {
+//			request.setAttribute("loginerr", "You are not a valid user . . . !");
+//		}
+		if (request.getAttribute("nameerr")!=null || request.getAttribute("passworderr")!=null || request.getAttribute("loginerr")!=null) {
+            request.getRequestDispatcher("hello.jsp").forward(request, response);
+        }
+		else /*if("kruthik".equals(name) && "kruthikb6".equals(password))*/{
+            request.setAttribute("message", "Hi Kruthik, how are you doing . . . !");
+            request.getRequestDispatcher("loginresults.jsp").forward(request, response);
+        }
 	}
-}
-	
-	private boolean isValidUser(String name,String pass) {
-		return name.equals("root")&& pass.equals("root");
-	}
+
 }
