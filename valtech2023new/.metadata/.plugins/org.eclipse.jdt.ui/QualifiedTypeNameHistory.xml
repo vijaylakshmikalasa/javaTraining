@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.stream.Collector"/>
+    <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.params.provider.CsvFileSource"/>
+    <fullyQualifiedTypeName name="java.util.stream.Stream"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.params.provider.Arguments"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.params.provider.MethodSource"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.valtech.training.pattern.checker.PatternCheckerService"/>
+    <fullyQualifiedTypeName name="com.valtech.training.mobile.ranking.MobileRankingServiceImpl"/>
+    <fullyQualifiedTypeName name="junit.framework.Assert"/>
+    <fullyQualifiedTypeName name="junit.framework.TestCase"/>
+</qualifiedTypeNameHistroy>

@@ -1,36 +1,47 @@
 package documentProcessing;
-
+ 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
-
+ 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+ 
 @WebServlet("/DocumentServlet")
 public class DocumentServlet extends HttpServlet {
+ 
+	private static final long serialVersionUID = 1L;
+ 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String paragraph = request.getParameter("paragraph");
-		String path = "C:\\Users\\Vijaylakshmi.Kalasa\\Desktop\\processed text";
-		
+		String path = "C:\\Users\\Vijaylakshmi Kalasa\\TextProcessingDocument";
 		long timestamp = System.currentTimeMillis();
-        String filename = path +"processed_paragraph_" + timestamp + ".txt";
-
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
-            writer.write(paragraph);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-		
-        //If u want to add some more stop words go ahead and add them
+		String filename = path + "processed_paragraph_" + timestamp + ".txt";
+		try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
+			writer.write(paragraph);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+ 
+		Map<String, Integer> wordCountMap = calculateWordCount(paragraph);
+ 
+		int count = wordCountMap.size();
+		request.setAttribute("totalWordCount", count);
+		request.setAttribute("paragraph", paragraph);
+		request.setAttribute("wordCountMap", wordCountMap);
+		request.getRequestDispatcher("results.jsp").forward(request, response);
+	}
+ 
+	public Map<String, Integer> calculateWordCount(String paragraph) {
 		HashSet<String> commonWords = new HashSet<>();
+ 
 		commonWords.add("is");
 		commonWords.add("i");
 		commonWords.add("as");
@@ -62,11 +73,13 @@ public class DocumentServlet extends HttpServlet {
 		commonWords.add("are");
 		commonWords.add("you");
 		commonWords.add("why");
+		// Add your common words here
+ 
 		String[] words = paragraph.split("\\s+");
 		for (int i = 0; i < words.length; i++) {
-			words[i] = words[i].replaceAll("[^a-zA-Z]", ""); // Remove non-alphabet characters
+			words[i] = words[i].replaceAll("[^a-zA-Z]", "");
 		}
-
+ 
 		Map<String, Integer> wordCountMap = new HashMap<>();
 		for (String word : words) {
 			word = word.toLowerCase();
@@ -74,12 +87,7 @@ public class DocumentServlet extends HttpServlet {
 				wordCountMap.put(word, wordCountMap.getOrDefault(word, 0) + 1);
 			}
 		}
-		int count=wordCountMap.size();
-
-		request.setAttribute("totalWordCount", count);
-		request.setAttribute("paragraph", paragraph);
-		request.setAttribute("wordCountMap", wordCountMap);
-
-		request.getRequestDispatcher("results.jsp").forward(request, response);
+ 
+		return wordCountMap;
 	}
 }

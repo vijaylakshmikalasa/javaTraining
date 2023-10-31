@@ -1,0 +1,5 @@
+INDEX VERSION 1.134
+C:\Users\Vijaylakshmi.Kalasa\valtech2023new\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\425915299.index
+\mobile-rating-app\src\main\java
+C:\Users\Vijaylakshmi.Kalasa\valtech2023new\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3822081373.index
+\firstWeb\src\main\java

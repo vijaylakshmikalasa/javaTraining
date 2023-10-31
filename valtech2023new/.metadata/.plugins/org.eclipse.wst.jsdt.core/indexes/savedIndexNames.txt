@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\Users\Vijaylakshmi.Kalasa\valtech2023new\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3032850555.index
+275101424.index
+4077671576.index
+2464399978.index
+2864694858.index
+1689364943.index
