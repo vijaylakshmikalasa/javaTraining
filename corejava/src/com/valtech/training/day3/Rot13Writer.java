@@ -15,7 +15,7 @@ public class Rot13Writer extends Writer {
 	
 	
 	public void write(int c) throws IOException {
-		dest.write(rot13Helper.rotate(char)c);
+		dest.write(rot13Helper.rotate((char)c));
 		
 		}
 		

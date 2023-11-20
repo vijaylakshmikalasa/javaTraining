@@ -13,9 +13,19 @@ public class Ascedesc {
 		if(peak == 0 || peak == i.length-1)
 			return false;
 		boolean asc = checkAscending(i,peak);
-		boolean des = checkDescending(i,peak);
+		boolean des = checkAscending(i,peak);
 		
 		return false;
+	}
+
+	private boolean checkAscending(int[] i, int peak) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	private int identifyPeak(int[] i) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
 	
